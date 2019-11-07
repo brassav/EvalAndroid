@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Brassart_Valentin_Cine</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">Titre</string>
+    <string name="note_scenario">Note du scenario</string>
+    <string name="note_musique">Note de la musique</string>
+    <string name="note_realisation">Note de la realisation</string>
+    <string name="jour_projection">Jour de la projection</string>
+    <string name="heure_projection">Heure de la projection</string>
+    <string name="avis">Avis / Critique</string>
+
+</resources>
