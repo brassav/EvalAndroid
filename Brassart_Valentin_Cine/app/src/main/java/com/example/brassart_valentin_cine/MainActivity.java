@@ -4,11 +4,13 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,8 +43,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        afficheList();
 
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        afficheList();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -65,5 +73,29 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void afficheList() {
+        try {
+            FilmManager m = new FilmManager(this);
+            m.open();
+            Cursor c = m.getFilms();
+            if (c.moveToFirst()) {
+                do {
+                    Log.d("test",
+                            c.getInt(c.getColumnIndex(FilmManager.KEY_ID_FILM)) + "," +
+                                    c.getString(c.getColumnIndex(FilmManager.KEY_TITLE_FILM)) + "," +
+                                    c.getInt(c.getColumnIndex(FilmManager.KEY_NOTE_SCENARIO)) + "," +
+                                    c.getInt(c.getColumnIndex(FilmManager.KEY_NOTE_MUSIC)) + "," +
+                                    c.getInt(c.getColumnIndex(FilmManager.KEY_NOTE_REALISATION)) + "," +
+                                    c.getString(c.getColumnIndex(FilmManager.KEY_AVIS)) + "," +
+                                    c.getString(c.getColumnIndex(FilmManager.KEY_DATE))
 
+                    );
+                } while (c.moveToNext());
+            }
+            c.close();
+            m.close();
+        } catch (Exception e) {
+
+        }
+    }
 }

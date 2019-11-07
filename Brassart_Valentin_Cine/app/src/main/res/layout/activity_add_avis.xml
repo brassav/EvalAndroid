@@ -32,6 +32,32 @@
         android:id="@+id/et_note_realisation"
         android:inputType="number"
         android:hint="@string/note_realisation"/>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heure_projection"
+        android:id="@+id/btn_time"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/in_time"
+        android:hint="@string/heure_projection"
+        />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btn_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jour_projection" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,32 +65,25 @@
         android:hint="@string/jour_projection"
         />
 
+</LinearLayout>
+
+
+    <EditText
+        android:id="@+id/et_avis"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="@string/avis" />
+
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/jour_projection"
-        android:id="@+id/btn_date"
-        />
+        android:text="@string/ajouter" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/in_time"
-        android:hint="@string/heure_projection"
+        android:id="@+id/error_msg"
+        android:textColor="#FF0000"
         />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/heure_projection"
-        android:id="@+id/btn_time"
-        />
-
-    <EditText
-        android:id="@+id/avis"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="@string/avis" />
-
-
 </LinearLayout>
