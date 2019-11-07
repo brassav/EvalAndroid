@@ -22,7 +22,7 @@ public class Add_avis extends AppCompatActivity  implements View.OnClickListener
     TextView txtDate, txtTime, txtError;
     EditText etTitle, etAvis, etNoteScenario, etNoteMusic, etNoteRealisation;
     private int mYear, mMonth, mDay, mHour, mMinute;
-    private int id = 0;
+    private static int id = 0;
 
 
     @Override
@@ -105,7 +105,7 @@ public class Add_avis extends AppCompatActivity  implements View.OnClickListener
                 String day = txtDate.getText().toString();
                 String time = txtTime.getText().toString();
                 String date = day + " " + time;
-                if (day != null && time != null && title != null && avis != null && note_musique >= 0 && note_realisation >= 0 && note_scenario >= 0) {
+                if (date.length() != 0 && title.length() != 0 && avis.length() != 0 && note_musique >= 0 && note_realisation >= 0 && note_scenario >= 0) {
                     m.addFilm(new Film(id, title, note_scenario, note_musique, note_realisation, avis, date));
                     txtError.setText("");
                     Add_avis.this.finish();
